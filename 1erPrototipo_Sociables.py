@@ -30,28 +30,28 @@ def divisores(entero):
 
 
 def sociables(periodo, numero):
-    tupla4 = []
+    subconjunto = []
     while periodo > 0:
-        if tupla4 != []:
-            if numero == tupla4[0]:
+        if subconjunto != []:
+            if numero == subconjunto[0]:
                 break
-        tupla4.append(numero)
+        subconjunto.append(numero)
         numero = divisores(numero)
         periodo -= 1
 
-    if len(tupla4) < 4:
-        tupla4 = []
+    if len(subconjunto) < periodo:
+        subconjunto = []
     else:
-        if numero != tupla4[0]:
-            tupla4 = []
-    return tupla4
+        if numero != subconjunto[0]:
+            subconjunto = []
+    return subconjunto
 
 
 @delta_time
 def principal():
     conjuntos = []
     for i in range(20000):  # Si prueban con 1300000 va a tardar lo suyo
-        social = sociables(4, i)  # Periodo 5 y rango de 20000 tambien sirve
+        social = sociables(5, i)  # Periodo 5 y rango de 20000 tambien sirve
         if social != []:
             conjuntos.append(social)
     if conjuntos == []:
