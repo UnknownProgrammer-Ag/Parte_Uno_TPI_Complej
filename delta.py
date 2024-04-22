@@ -1,3 +1,5 @@
+from time import time
+
 def delta_time(func):
     def wrap_func(*args, **kwargs):
         start = time()
