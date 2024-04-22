@@ -14,15 +14,17 @@ def sociables():
     for i in range(rango):
 
         # REFORMAR ESTA IDEA REDUCIENDO LA COMPLEJIDAD
-        suma = 1
-        div = 2
-        cota_sup = sqrt(entero)
-        while div <= cota_sup:
-            if (entero % div) == 0:
-                suma += (div+(entero/div))
-            div += 1
-        return suma
-        while periodo > 0:
+        elemento=i
+        while len(subconjunto) < periodo:
+            sumaDiv=1 #Sabemos que un numero siempre tendra de divisor a su identidad
+            div=2 
+            divMax=sqrt(elemento) 
+            while div <= divMax:
+                if (elemento % div) == 0:
+                    sumaDiv += (div+(elemento/div))
+                div += 1
+
+
             if subconjunto != []:
                 if numero == subconjunto[0]:
                     break
