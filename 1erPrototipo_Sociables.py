@@ -41,8 +41,8 @@ def sociables(periodo, numero):
 @delta_time
 def principal():
     conjuntos = []
-    for i in range(20000):  # Si prueban con 1300000 va a tardar lo suyo
-        social = sociables(5, i)  # Periodo 5 y rango de 20000 tambien sirve
+    for i in range(500000):
+        social = sociables(9, i)
         if social != []:
             conjuntos.append(social)
     if conjuntos == []:

@@ -11,8 +11,7 @@ def sociables():
     for i in range(rango):
         elemento = i
         subconjunto = []
-        bucle = periodo
-        while (len(subconjunto) < periodo) and (bucle > 0):
+        while (len(subconjunto) < periodo):
             sumaDiv = 1  # Sabemos que un numero siempre tendra de divisor a su identidad
             div = 2
             divMax = sqrt(elemento)
@@ -23,7 +22,6 @@ def sociables():
             # Ver alguna forma de verificar que los conjuntos no sean nros amigos repetidos en periodo para
             subconjunto.append(elemento)
             elemento = sumaDiv
-            bucle -= 1
             if (int(i) == elemento) and (len(subconjunto) == periodo) and (subconjunto[0] != subconjunto[periodo-1]):
                 conjuntos_posibles.add(tuple(subconjunto))
     if conjuntos_posibles:
