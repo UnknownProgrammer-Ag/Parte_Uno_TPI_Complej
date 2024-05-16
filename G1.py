@@ -1,7 +1,7 @@
 from decorators import delta_time
 
 
-@delta_time("GRUPO G1")
+@delta_time  # "Grupo G1"
 def sociables(N, PERIODOS):
     def descomponer(elemento, cache, primos):
         if elemento in cache:
@@ -24,11 +24,10 @@ def sociables(N, PERIODOS):
 
         return sumaDiv
 
-    for each in PERIODOS:
+    def conjuntos(N, periodo):
         lista = set()
         cache = {}
         primos = {}
-
         for i in range(N):
             if i in cache or i in primos:
                 continue
@@ -36,7 +35,6 @@ def sociables(N, PERIODOS):
             elemento = i
             subconjunto = []
             visitados = set()
-
             while (len(subconjunto) < periodo) and (elemento not in visitados):
                 visitados.add(elemento)
                 subconjunto.append(elemento)
@@ -49,7 +47,10 @@ def sociables(N, PERIODOS):
 
         return lista
 
+    for periodo in PERIODOS:
+        print(conjuntos(N, periodo))
+
 
 if __name__ == "__main__":
     # INGRESO DATOS
-    print(sociables(DATOS))
+    print(sociables(100000, [5, 6, 7]))
